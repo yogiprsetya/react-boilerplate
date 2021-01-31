@@ -9,15 +9,11 @@ const RouterManager = ({ progress, location, dispatch, ...props }) => (
     <Navbar />
 
     <Switch>
-      <Route exact path='/' component={ AboutUs } />
+      <Route exact path='/' component={ Home } />
       <PrivateRoute path='/dashboard' component={ Dashboard } />
     </Switch>
 
     <Footer />
-
-    { props.showModalSignup && <Signup /> }
-    { props.showModalSignin && <Signin /> }
-    { props.showModalOffer && <Offer /> }
 
     <Loading shown={progress} />
   </Fragment>

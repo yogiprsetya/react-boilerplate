@@ -1,13 +1,14 @@
 {
   "name": "react-project",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "autoprefixer": "^10.2.4",
     "axios": "^0.21.1",
+    "is-empty": "^1.2.0",
     "jwt-decode": "^3.1.2",
     "postcss": "^8.2.4",
     "prop-types": "^15.7.2",
@@ -18,15 +19,14 @@
     "react-scripts": "^4.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "tailwindcss": "^2.0.2",
-    "web-vitals": "^0.2.4"
+    "tailwindcss": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "tailwind:build": "tailwindcss build src/assets/tailwind.css -o src/assets/tailwind.output.css",
+    "tailwind:dev": "tailwindcss build src/assets/tailwind.css -o src/assets/tailwind.output.css",
     "tailwind:prod": "cross-env NODE_ENV=production npm run tailwind:build"
   },
   "eslintConfig": {
