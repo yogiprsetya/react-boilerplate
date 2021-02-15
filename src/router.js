@@ -1,16 +1,21 @@
 import React, { Fragment } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PrivateRoute from 'utils/privateRoute';
-import Loading from 'lib/elements/Loading';
+// import PrivateRoute from 'utils/privateRoute';
 
-const RouterManager = ({ progress, location, dispatch, ...props }) => (
+import Loading from 'lib/elements/Loading';
+import Navbar from 'lib/components/Navbar';
+import Footer from 'lib/components/Footer';
+
+import Home from 'pages/Home';
+
+const RouterManager = ({ progress }) => (
   <Fragment>
     <Navbar />
 
     <Switch>
       <Route exact path='/' component={ Home } />
-      <PrivateRoute path='/dashboard' component={ Dashboard } />
+      {/* <PrivateRoute path='/dashboard' component={ Dashboard } /> */}
     </Switch>
 
     <Footer />
@@ -23,4 +28,4 @@ const mapStateToProps = state => ({
   ...state.modalControl
 })
 
-export default withRouter(connect(mapStateToProps)(RouterManager));
+export default connect(mapStateToProps)(RouterManager);
